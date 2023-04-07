@@ -1,0 +1,9 @@
+[
+        { "Name":"DNS-Server-1",
+        "IP_Addr":"203.11.34.5",
+        "Home":"LAN-1" },
+        { "Name":"BGP-Server-1",
+        "IP_Addr":"222.11.34.5",
+        "Home":"LAN-2" }
+]
+

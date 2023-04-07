@@ -1,0 +1,69 @@
+{ "Networks" : [
+    { "name":"lan-1",
+      "level":"LAN",
+      "ext_conn":["wan-1"]
+    },
+    { "name":"lan-2",
+      "level":"LAN",
+      "ext_conn":["wan-1"]
+    },
+    { "name":"lan-3",
+      "level":"LAN",
+      "ext_conn":["wan-1"]
+    },
+    { "name":"lan-4",
+      "level":"LAN",
+      "ext_conn":["wan-2"]
+    },
+    { "name":"lan-5",
+      "level":"LAN",
+      "ext_conn":["wan-2"]
+    },
+    { "name":"lan-6",
+      "level":"LAN",
+      "ext_conn":["wan-2"]
+    },
+    { "name":"lan-7",
+      "level":"LAN",
+      "ext_conn":["wan-2"]
+    },
+    {"name":"wan-1",
+     "level":"WAN",
+     "ext_conn":["T3-1"]
+    },
+    {"name":"wan-2",
+     "level":"WAN",
+     "ext_conn":["T3-2"]
+    },
+    {"name":"T3-1",
+     "level":"T3",
+     "ext_conn":["T2-1"]
+    },
+    {"name":"T3-2",
+     "level":"T3",
+     "ext_conn":["T2-2"]
+    },
+    {"name":"T2-1",
+     "level":"T2",
+     "ext_conn":["T2-2"]
+    },
+    {"name":"T2-2",
+     "level":"T2",
+     "ext_conn":["T2-2"]
+    }],
+    "Hosts":[
+        { "name":"DNS-Server-1",
+        "IP_Addr":"203.11.34.5",
+        "home":"lan-1" },
+        { "name":"BGP-Server-1",
+        "IP_Addr":"222.11.34.5",
+        "home":"lan-2" }
+    ]
+}
+
+ 
+    
+ 
+ 
+ 
+ 

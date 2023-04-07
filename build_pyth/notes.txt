@@ -1,0 +1,61 @@
+# network.json describes the network and its connections, primarily based on names rather than IP addresses
+# Each network has a string-based name and a 'level' from {'LAN','WAN', "T3", "T2", "T1"}
+#
+# Every LAN has a router whose name is associated that connects it to a WAN.  
+#
+# If the LAN names a device 'home' then that device is the router,
+# otherwise a LAN with name 'lan-name' gets an associated router/firewall 'lan-name-rtr'
+#
+# It will be an error to not have a WAN and a connection to it declared in the connections 
+#
+# It is assumed that all routers connected to a WAN are connected to each other, with a default intra-WAN bandwidth 
+# and latency assumed.
+#
+# WANs may also connect to T3 networks, and a given WAN may connect to more than one T3.
+# These too are implemented as routers, and all routers connected to a given T3 are assumed to connect to each other,
+# again with a default bandwidth and latency. 
+#
+# A T3 may connect to a number of T2s, including 0 
+#
+# A T2 may connect to other T2s (which must be named) and any number of T1s
+# All T1s connect to each other
+
+# in this first round we don't worry about firewall kinds of filtering, but we will later
+#
+
+{ "Networks" : [
+    { "name":"lan-1",
+      "level":"LAN",
+      "home":"device-1",
+      "connections":["WAN-1"]
+    },
+    { "name":"lan-2",
+      "level":"LAN",
+      "connections":["WAN-1"]
+    },
+    { "name":"lan-3",
+      "level":"LAN",
+      "connections":["WAN-1"]
+    },
+    { "name":"lan-4",
+      "level":"LAN",
+      "connections":["WAN-1"]
+    },
+    { "name":"wan-1",
+      "level":"WAN",
+      "connections":["T3-1","T3-2"]
+    },
+    { "name":"wan-2",
+      "level":"WAN",
+      "connections":["T3-1"]
+    },
+    {"name":"T3-1",
+     "level":"T3",
+     "connections":["T3-2"]
+    } 
+    ]
+
+
+
+
+
